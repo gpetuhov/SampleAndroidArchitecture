@@ -11,11 +11,12 @@ import android.widget.TextView;
 import com.gpetuhov.android.sampleandroidarchitecture.R;
 import com.gpetuhov.android.sampleandroidarchitecture.models.Quake;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuakeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-  private List<Quake> quakeList;
+  private List<Quake> quakeList = new ArrayList<>();
   private LayoutInflater layoutInflater;
 
   public QuakeAdapter(Context context) {
@@ -40,7 +41,8 @@ public class QuakeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
   }
 
   public void setQuakeList(List<Quake> quakeList) {
-    this.quakeList = quakeList;
+    this.quakeList.clear();
+    this.quakeList.addAll(quakeList);
     notifyDataSetChanged();
   }
 
