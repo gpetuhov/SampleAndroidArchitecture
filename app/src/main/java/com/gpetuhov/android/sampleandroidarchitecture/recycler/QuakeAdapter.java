@@ -18,8 +18,7 @@ public class QuakeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
   private List<Quake> quakeList;
   private LayoutInflater layoutInflater;
 
-  public QuakeAdapter(List<Quake> quakeList, Context context) {
-    this.quakeList = quakeList;
+  public QuakeAdapter(Context context) {
     this.layoutInflater = LayoutInflater.from(context);
   }
 
@@ -40,6 +39,10 @@ public class QuakeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     return quakeList.size();
   }
 
+  public void setQuakeList(List<Quake> quakeList) {
+    this.quakeList = quakeList;
+    notifyDataSetChanged();
+  }
 
   // === ViewHolder ===
 

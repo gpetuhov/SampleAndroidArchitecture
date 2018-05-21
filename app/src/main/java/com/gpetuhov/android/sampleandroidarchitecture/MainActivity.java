@@ -1,15 +1,14 @@
 package com.gpetuhov.android.sampleandroidarchitecture;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.gpetuhov.android.sampleandroidarchitecture.models.Quake;
+import com.gpetuhov.android.sampleandroidarchitecture.models.QuakeListViewModel;
 import com.gpetuhov.android.sampleandroidarchitecture.recycler.QuakeAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,16 +17,15 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
+    // Init RecyclerView
     RecyclerView recyclerView = findViewById(R.id.recycler_view);
     LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
     recyclerView.setLayoutManager(mLayoutManager);
-
-    List<Quake> quakeList = new ArrayList<>();
-    for (int i = 0; i < 50; i++) {
-      quakeList.add(new Quake("Location number" + i, "5"));
-    }
-
-    QuakeAdapter adapter = new QuakeAdapter(quakeList, this);
+    QuakeAdapter adapter = new QuakeAdapter(this);
     recyclerView.setAdapter(adapter);
+
+    // Get ViewModel and start observing data in it
+    QuakeListViewModel viewModel = ViewModelProviders.of(this).get(QuakeListViewModel.class);
+    viewModel.getQuakeList().observe(this, adapter::setQuakeList);
   }
 }
