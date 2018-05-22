@@ -36,21 +36,14 @@ public class QuakeListViewModel extends ViewModel {
       return quakeList;
     }
 
-    Log.d(TAG, "Loading data from network");
+    // Load data from the Repository.
+    // ViewModel knows nothing about how the data is provided by the Repository.
+    // Repository just provides LiveData which is in turn provided
+    // to MainActivity by ViewModel, and MainActivity updates the UI
+    // every time LiveData changes.
+    Log.d(TAG, "Loading data from the repo");
     quakeList = repository.getQuakeList();
 
-    // Data does not exist.
-    // Create dummy data.
-//    Log.d(TAG, "Generating dummy data");
-//    List<Quake> list = new ArrayList<>();
-//    for (int i = 0; i < 50; i++) {
-//      list.add(new Quake("Location number" + i, "5"));
-//    }
-
-    // Our data is just the List, so it must be wrapped into MutableLiveData
-//    MutableLiveData<List<Quake>> mutableLiveData = new MutableLiveData<>();
-//    mutableLiveData.setValue(list);
-//    quakeList = mutableLiveData;
     return quakeList;
   }
 }

@@ -1,5 +1,6 @@
 package com.gpetuhov.android.sampleandroidarchitecture.models;
 
+// In this example we need only quake location and magnitude
 public class Quake {
   private String location;
   private String magnitude;
