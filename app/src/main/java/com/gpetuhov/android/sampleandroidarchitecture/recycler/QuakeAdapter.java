@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.gpetuhov.android.sampleandroidarchitecture.R;
-import com.gpetuhov.android.sampleandroidarchitecture.models.Quake;
+import com.gpetuhov.android.sampleandroidarchitecture.data.models.Quake;
 
 import java.util.ArrayList;
 import java.util.List;

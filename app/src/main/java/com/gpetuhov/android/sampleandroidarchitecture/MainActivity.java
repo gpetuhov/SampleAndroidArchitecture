@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.gpetuhov.android.sampleandroidarchitecture.models.QuakeListViewModel;
+import com.gpetuhov.android.sampleandroidarchitecture.data.models.QuakeListViewModel;
 import com.gpetuhov.android.sampleandroidarchitecture.recycler.QuakeAdapter;
 
 // In this example we load list of recent quakes from USGS server

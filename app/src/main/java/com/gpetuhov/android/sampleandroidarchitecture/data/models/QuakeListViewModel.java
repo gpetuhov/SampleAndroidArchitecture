@@ -1,14 +1,12 @@
-package com.gpetuhov.android.sampleandroidarchitecture.models;
+package com.gpetuhov.android.sampleandroidarchitecture.data.models;
 
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.util.Log;
 
 import com.gpetuhov.android.sampleandroidarchitecture.QuakeApp;
-import com.gpetuhov.android.sampleandroidarchitecture.repo.Repository;
+import com.gpetuhov.android.sampleandroidarchitecture.data.repo.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
